@@ -1,11 +1,16 @@
 const chokidar = require('chokidar');
 const childProcess = require('child_process')
 
+let modelDir = process.argv[2]
+if (modelDir === undefined) {
+  console.log('Please make sure a valid modelDir name specified.')
+  process.exit(-1)
+}
+
 // One-liner for current directory
 chokidar.watch('NEUTRINO/score/musicxml/*.musicxml').on('all', (event, path) => {
 
   let fileMatch = path.match(/([^\\/.]+)\.musicxml$/)
-  let modelDir;
   let cmd;
 
   if (fileMatch.length > 1) {
@@ -15,7 +20,6 @@ chokidar.watch('NEUTRINO/score/musicxml/*.musicxml').on('all', (event, path) => 
     if (event === 'change') {
       console.log('encoding start:', fileName)
 
-      modelDir = process.argv[2]
       cmd = 'NEUTRINO\\Execute.bat '
 
       let spawnProcess = childProcess.spawn(cmd, [fileName, modelDir])
