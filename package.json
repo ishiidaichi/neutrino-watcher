@@ -1,0 +1,23 @@
+{
+  "name": "neutrino-watcher",
+  "version": "1.0.0",
+  "description": "Watch musicxml files and automatically encode them into audio files using NEUTRINO",
+  "main": "index.js",
+  "dependencies": {
+    "chokidar": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishiidaichi/neutrino-watcher.git"
+  },
+  "author": "Daichi Ishii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ishiidaichi/neutrino-watcher/issues"
+  },
+  "homepage": "https://github.com/ishiidaichi/neutrino-watcher#readme"
+}
